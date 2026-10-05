@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 1 Month Anniversary ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        }
+
+        .card {
+            width: 90%;
+            max-width: 420px;
+            padding: 35px 25px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+            animation: appear 1.2s ease;
+        }
+
+        .heart {
+            font-size: 65px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        h1 {
+            color: #ff3f6c;
+            font-size: 32px;
+            margin: 15px 0;
+        }
+
+        h2 {
+            color: #ff5c8a;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .love {
+            margin-top: 20px;
+            color: #ff3f6c;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        .floating-heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-heart:nth-child(2) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .floating-heart:nth-child(3) {
+            left: 55%;
+            animation-delay: 1s;
+        }
+
+        .floating-heart:nth-child(4) {
+            left: 80%;
+            animation-delay: 3s;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -20px;
+            z-index: 20;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+
+            .heart {
+                font-size: 55px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            h2 {
+                font-size: 19px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .love {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="floating-heart">❤️</div>
+    <div class="floating-heart">💕</div>
+    <div class="floating-heart">💗</div>
+    <div class="floating-heart">💖</div>
+
+    <!-- Main Card -->
+    <div class="card">
+
+        <div class="heart">❤️</div>
+
+        <h1>Happy 1 Month Anniversary!</h1>
+
+        <h2>To My Special Person 💕</h2>
+
+        <p>
+            One month with you already feels so special.
+            Thank you for bringing so much happiness,
+            smiles, and beautiful moments into my life.
+        </p>
+
+        <p>
+            This is just the beginning of our beautiful journey.
+            I hope we create many more memories together. 🥰
+        </p>
+
+        <div class="love">
+            I’m so lucky to have you. ❤️
+        </div>
+
+    </div>
+
+    <script>
+        // Confetti Animation
+        function createConfetti() {
+
+            const confetti = document.createElement("div");
+
+            confetti.classList.add("confetti");
+
+            const colors = [
+                "#ff4d6d",
+                "#ffbe0b",
+                "#8338ec",
+                "#3a86ff",
+                "#06d6a0",
+                "#ff006e"
+            ];
+
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.backgroundColor =
+                colors[Math.floor(Math.random() * colors.length)];
+
+            confetti.style.width =
+                Math.random() * 8 + 5 + "px";
+
+            confetti.style.height =
+                Math.random() * 8 + 5 + "px";
+
+            confetti.style.animationDuration =
+                Math.random() * 3 + 2 + "s";
+
+            confetti.style.transform =
+                "rotate(" + Math.random() * 360 + "deg)";
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+
+        // Create confetti continuously
+        setInterval(createConfetti, 120);
+
+        // Extra confetti burst when page opens
+        for (let i = 0; i < 80; i++) {
+            setTimeout(createConfetti, i * 20);
+        }
+    </script>
+
+</body>
+</html>
+
